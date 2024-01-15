@@ -4,6 +4,7 @@ import axios from 'axios';
 const App = () => {
     const [data,setData] = useState({});
     const [location,setLocation] = useState("")
+    
   //const url =`https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid=f38eb1b50f2e5fa85215cca47aa3edf1`
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=f38eb1b50f2e5fa85215cca47aa3edf1`
 
@@ -14,20 +15,27 @@ const App = () => {
       console.log(response.data)
     })
     setLocation('')
-  }
+   }
   }
 
 
   return (
     <div className='app'>
+
+
     <div className='search'>
-      <input
-        value={location}
-        onChange={(e) => setLocation(e.target.value)}
-        onKeyPress={searchLocation}
-        placeholder='Enter Location'
-      />
+
+      <div class="input-group mb-3">
+  <input type="text"  placeholder="Enter Location" 
+    value={location}
+    onChange={(e) => setLocation(e.target.value)}
+     onKeyPress={searchLocation}
+  />
+  </div>
     </div>
+
+
+
       <div className='container'>
 
         <div className='top'>
