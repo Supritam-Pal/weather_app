@@ -25,13 +25,12 @@ const App = () => {
 
     <div className='search'>
 
-      <div class="input-group mb-3">
   <input type="text"  placeholder="Enter Location" 
     value={location}
     onChange={(e) => setLocation(e.target.value)}
      onKeyPress={searchLocation}
   />
-  </div>
+  
     </div>
 
 
@@ -43,7 +42,7 @@ const App = () => {
             <p>{data.name}</p>
           </div>
           <div className='temp'>
-            {data.main ? <h1>{data.main.temp}°F</h1> : null }
+            {data.main ? <h1>{data.main.temp.toFixed()}°F</h1> : null }
             
           </div>
           <div className='description'>
